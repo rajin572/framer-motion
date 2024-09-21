@@ -14,6 +14,13 @@ const Header = () => {
       },
     },
   };
+  const iconVariants = {
+    hover: {
+      scale: 1.3,
+      textShadow: "0px 0px 8px rgb(255,255,255)",
+      transition: { type: "spring", duration: 2 },
+    },
+  };
   const icon = {
     hidden: {
       opacity: 0,
@@ -31,10 +38,10 @@ const Header = () => {
       //   initial={{ y: -250 }}
       //   animate={{ y: -10 }}
       //   transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
-      className="bg-[#5A166F] text-white overflow-hidden flex items-center gap-5 px-10 py-5 z-50"
+      className="bg-[#5A166F] text-white overflow-hidden flex items-center gap-5 px-10 py-5 z-50 sticky top-0"
     >
       <Link href="/">
-        <div className="">
+        <motion.div variants={iconVariants} whileHover={"hover"} className="">
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
@@ -52,13 +59,14 @@ const Header = () => {
               variants={icon}
               initial="hidden"
               animate="visible"
+              whileHover={"hover"}
               transition={{
                 default: { duration: 2, ease: "easeInOut" },
                 fill: { duration: 2, ease: [1, 0, 0.8, 1] },
               }}
             />
           </motion.svg>
-        </div>
+        </motion.div>
       </Link>
       <motion.div
         variants={headerVariants}
