@@ -1,91 +1,90 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
+  //* Define Veriants
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      x: "100vw",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        damping: 13,
+        mass: 1,
+        staggerChildren: 0.3,
+        when: "beforeChildren",
+      },
+    },
+  };
+  const childVariants = {
+    hidden: {
+      opacity: 0,
+      x: -40,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+  const menus = [
+    {
+      name: "Spring",
+      link: "/spring",
+    },
+    {
+      name: "Spring",
+      link: "/spring",
+    },
+    {
+      name: "Spring",
+      link: "/spring",
+    },
+    {
+      name: "Spring",
+      link: "/spring",
+    },
+    {
+      name: "Spring",
+      link: "/spring",
+    },
+    {
+      name: "Spring",
+      link: "/spring",
+    },
+  ];
   return (
-    <main className="w-full h-screen">
-      <div className="w-full h-full flex  justify-center items-center text-white text-justify gap-10">
+    <main className="w-full h-[90vh] ">
+      <div className="w-full h-full flex flex-col justify-center items-center  gap-10 text-xl">
         <motion.div
-          initial={{ x: -200, y: -150, opacity: 0, scale: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 2.5,
-            type: "spring",
-          }}
-          className="flex justify-center items-center w-60 h-60 text-center bg-purple-500 shadow-lg hover:bg-purple-600 hover:shadow-2xl rounded-md"
+          variants={containerVariants} //* Declear Variants
+          initial={"hidden"}
+          animate={"visible"}
+          className="w-96 text-start mx-auto "
         >
-          Normal Spring
-        </motion.div>
-        <motion.div
-          initial={{ x: -200, y: -150, opacity: 0, scale: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 2.5,
-            type: "spring",
-            damping: 3,
-          }}
-          className="flex justify-center items-center w-60 h-60 text-center bg-purple-500 shadow-lg hover:bg-purple-600 hover:shadow-2xl rounded-md"
-        >
-          Spring + Damping
-          <br /> 0 means infinity and default value is 10. I set 3. More lower
-          means more damped
-        </motion.div>
-        <motion.div
-          initial={{ x: -200, y: -150, opacity: 0, scale: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 2.5,
-            type: "spring",
-            stiffness: 120,
-            // mass: 50,
-          }}
-          className="flex flex-col justify-center items-center w-60 h-60 text-center bg-purple-500 shadow-lg hover:bg-purple-600 hover:shadow-2xl rounded-md"
-        >
-          <h1>Spring + Stiffness</h1>
-          <br />{" "}
-          <p>
-            Default value is 100. When you increase the stiffness value, the
-            element moves more quickly and forcefully toward its target. I set
-            120
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ x: -200, y: -150, opacity: 0, scale: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 2.5,
-            type: "spring",
-
-            mass: 5,
-          }}
-          className="flex flex-col justify-center items-center w-60 h-60 text-center bg-purple-500 shadow-lg hover:bg-purple-600 hover:shadow-2xl rounded-md"
-        >
-          <h1>Spring + Mass</h1>
-          <br />{" "}
-          <p>
-            Default value is 100. When you increase the stiffness value, the
-            element moves more quickly and forcefully toward its target. I set
-            120
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ x: -200, y: -150, opacity: 0, scale: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 2.5,
-            type: "spring",
-
-            bounce: 0.6,
-          }}
-          className="flex flex-col justify-center items-center w-60 h-60 text-center bg-purple-500 shadow-lg hover:bg-purple-600 hover:shadow-2xl rounded-md"
-        >
-          <h1>Spring + Bounce</h1>
-          <br /> <p></p>
+          <div className="font-bold border-b border-slate-400 px-5 py-3">
+            <h2 className="text-3xl">Links:</h2>
+          </div>
+          <div className="flex flex-col gap-5 py-10 px-12">
+            {menus.map((menu, i) => (
+              <motion.span
+                variants={childVariants}
+                whileHover={{ scale: 1.3, originX: 0, color: "#f8e112" }} //* While Hover Animantion
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                }}
+                key={i}
+              >
+                <Link href={menu.link}>{menu.name}</Link>
+              </motion.span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </main>
