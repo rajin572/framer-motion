@@ -61,12 +61,8 @@ export default function Home() {
       link: "/scrollAnimation",
     },
     {
-      name: "Spring",
-      link: "/spring",
-    },
-    {
-      name: "Spring",
-      link: "/spring",
+      name: "All Projects",
+      link: "/projects",
     },
   ];
   return (
