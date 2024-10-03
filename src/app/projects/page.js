@@ -44,6 +44,10 @@ const page = () => {
       name: "On Scroll Reveal",
       link: "/projects/on-scroll-revel",
     },
+    {
+      name: "Horizontal Scroll",
+      link: "/projects/horizontal-scroll",
+    },
   ];
   return (
     <main className="w-full min-h-[90vh] ">

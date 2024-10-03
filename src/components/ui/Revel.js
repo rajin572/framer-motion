@@ -29,6 +29,7 @@ const Revel = ({ children, width = "fit-content" }) => {
     <div ref={ref} className={`relative w-fit overflow-hidden`}>
       <motion.div
         variants={revelVariants}
+        initial="hidden"
         animate={isInview ? "visible" : "hidden"}
         transition={{ duration: 1, delay: 0.25 }}
         className="-z-10"
