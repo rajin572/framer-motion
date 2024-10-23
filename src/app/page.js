@@ -94,7 +94,7 @@ export default function Home() {
                     <motion.span
                       variants={childVariants}
                       exit={{
-                        x: -40,
+                        x: -400,
                         opacity: 0,
                       }}
                       whileHover={{

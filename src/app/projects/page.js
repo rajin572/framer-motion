@@ -48,6 +48,10 @@ const page = () => {
       name: "Horizontal Scroll",
       link: "/projects/horizontal-scroll",
     },
+    {
+      name: "Play Video On Scroll",
+      link: "/projects/play-video-on-scroll",
+    },
   ];
   return (
     <main className="w-full min-h-[90vh] ">
