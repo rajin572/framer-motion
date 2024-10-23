@@ -11,7 +11,7 @@ const PlayVideoOnScroll = () => {
   // Initialize Lenis for smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.5, // Slower duration for even smoother scrolling
+      duration: 1.2, // Slower duration for even smoother scrolling
       easing: (t) => 1 - Math.pow(1 - t, 4), // Smooth easing (can be customized)
       smoothWheel: true,
       smoothTouch: true,
