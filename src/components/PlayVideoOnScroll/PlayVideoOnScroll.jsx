@@ -75,7 +75,7 @@ const PlayVideoOnScroll = () => {
         </video>
         <div className="h-[100vh] relative">
           <h1 className="text-white text-8xl font-bold text-center sticky top-[42%]">
-            Hello Developers
+            Hello Developers.
           </h1>
         </div>
       </div>
