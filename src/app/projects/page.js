@@ -52,6 +52,10 @@ const page = () => {
       name: "Play Video On Scroll",
       link: "/projects/play-video-on-scroll",
     },
+    {
+      name: "Scroll Card Parallax",
+      link: "/projects/scroll-card-parallax",
+    },
   ];
   return (
     <main className="w-full min-h-[90vh] ">
